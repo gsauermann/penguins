@@ -17,35 +17,5 @@ The penguin data were collected and made available by Dr. Kristen Gorman and the
 
 ![](https://www.gabemednick.com/post/penguin/featured.png)
 
-## Single trait distribution
-
-```{r}
-ggplot(data = penguins) +
-  geom_boxplot(aes(x = species, y = bill_length_mm))
-```
-
-```{r}
-ggplot(data = penguins) +
-  geom_histogram(mapping = aes(fill = species, x = body_mass_g), alpha = 0.5)
-
-```
-
-## Relationship between multiple traits
-
-```{r}
-ggplot(data = penguins, mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
-  geom_point() + 
-  geom_smooth()
-
-```
 
 
-## Sexual dimorphism
-
-```{r}
-penguins %>% 
-  drop_na(sex) %>%
-    ggplot(mapping = aes(x = species, y = body_mass_g, fill = sex)) + 
-  geom_violin() 
-
-```

@@ -2,10 +2,12 @@ name: "our-website"
 navbar:
   title: "Our Collaborative Website"
   left:
-    - text: "Cars"
-      href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Single trait distribution""
+      href: one.html
+    - text: "Relationship between multiple traits"
+      href: two.html
+    - text: "Sexual dimorphism"
+      href: three.html
 output_dir: "."
 output:
   html_document:

@@ -1,0 +1,28 @@
+---
+title: "penguins"
+author: "Georgia Sauermann"
+date: "2/9/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+
+## Single trait distribution
+
+```{r}
+ggplot(data = penguins) +
+  geom_boxplot(aes(x = species, y = bill_length_mm))
+```
+
+```{r}
+ggplot(data = penguins) +
+  geom_histogram(mapping = aes(fill = species, x = body_mass_g), alpha = 0.5)
+
+```
+
+
