@@ -1,0 +1,51 @@
+---
+title: "penguins"
+author: "Georgia Sauermann"
+date: "2/9/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+
+## Data
+The penguin data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, and were compiled by Dr. Allison Horst and colleagues. The dataset contains information about three species of penguins, and 344 total penguins.
+
+![](https://www.gabemednick.com/post/penguin/featured.png)
+
+## Single trait distribution
+
+```{r}
+ggplot(data = penguins) +
+  geom_boxplot(aes(x = species, y = bill_length_mm))
+```
+
+```{r}
+ggplot(data = penguins) +
+  geom_histogram(mapping = aes(fill = species, x = body_mass_g), alpha = 0.5)
+
+```
+
+## Relationship between multiple traits
+
+```{r}
+ggplot(data = penguins, mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point() + 
+  geom_smooth()
+
+```
+
+
+## Sexual dimorphism
+
+```{r}
+penguins %>% 
+  drop_na(sex) %>%
+    ggplot(mapping = aes(x = species, y = body_mass_g, fill = sex)) + 
+  geom_violin() 
+
+```
