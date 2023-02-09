@@ -2,7 +2,7 @@ name: "our-website"
 navbar:
   title: "Our Collaborative Website"
   left:
-    - text: "Single trait distribution""
+    - text: "Single trait distribution"
       href: one.html
     - text: "Relationship between multiple traits"
       href: two.html
